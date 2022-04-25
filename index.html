@@ -5,27 +5,28 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="./css/style.css">
 	<title>online fashion store</title>
+  <script defer src="./js/index.js"></script>
 </head>
 <body>
 
-<!------------------------------- main navigation bar ------------------------------->
+<!-- main navigation bar -->
   <header class="main-header">
 
     <div class="title-navbar">
       <ul class="title-header-list">
-        <li class="title-logo"><img src="./fonts/logo.svg"></li>
-        <li class="title-header">as glaze fashion</li>
+        <li><img class="title-logo" src="./fonts/logo.svg"></li>
+        <li class="title-header">GLAZE FASHION</li>
       </ul>
     </div>
 
     <nav class="navbar">
       <ul class="navlist">
-        <li class="nav-list-item">home</li>
-        <li class="nav-list-item">models</li>
-        <li class="nav-list-item">services</li>
-        <li class="nav-list-item">gallery</li>
-        <li class="nav-list-item">team</li>
-        <li class="nav-list-item">contact</li>
+        <li class="nav-list-item"><a href="#">home</a></li>
+        <li class="nav-list-item"><a href="#">models</a></li>
+        <li class="nav-list-item"><a href="#">services</a></li>
+        <li class="nav-list-item"><a href="#">gallery</a></li>
+        <li class="nav-list-item"><a href="#">team</a></li>
+        <li class="nav-list-item"><a href="#">contact</a></li>
       </ul>
     </nav>
 
@@ -53,8 +54,28 @@
     </ul>
     
   </header>
-<!---------------------------- end of main navigation bar ---------------------------->
+<!-- end of main navigation bar -->
 
-
+<!-- top carousal -->
+  <section class="corosoul-head">
+    <div>
+      <div class="carousal-item">
+        <img class="carousal-image" src="./images/banner11.jpg">
+      </div>
+      <div class="carousal-item">
+        <img class="carousal-image" src="./images/banner22.jpg">
+      </div>
+    </div> 
+    <div class="buttons">
+      <button class="corousal-button button-1"> </button>
+      <button class="corousal-button button-2"> </button>
+    </div>
+  </section>
+ 
+<!-- end of top carousal -->
+  <script type="module">
+    import Swup from 'swup';
+    const swup = new Swup();
+  </script>
 </body>
 </html>

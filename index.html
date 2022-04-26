@@ -15,18 +15,18 @@
     <div class="title-navbar">
       <ul class="title-header-list">
         <li><img class="title-logo" src="./fonts/logo.svg"></li>
-        <li class="title-header">GLAZE FASHION</li>
+        <li class="title-header">BLAZE FASHION</li>
       </ul>
     </div>
 
     <nav class="navbar">
       <ul class="navlist">
-        <li class="nav-list-item"><a href="#">home</a></li>
-        <li class="nav-list-item"><a href="#">models</a></li>
-        <li class="nav-list-item"><a href="#">services</a></li>
-        <li class="nav-list-item"><a href="#">gallery</a></li>
-        <li class="nav-list-item"><a href="#">team</a></li>
-        <li class="nav-list-item"><a href="#">contact</a></li>
+        <li class="nav-list-item"><a class="navlist-link" href="#">home</a></li>
+        <li class="nav-list-item"><a class="navlist-link" href="#">models</a></li>
+        <li class="nav-list-item"><a class="navlist-link" href="#">services</a></li>
+        <li class="nav-list-item"><a class="navlist-link" href="#">gallery</a></li>
+        <li class="nav-list-item"><a class="navlist-link" href="#">team</a></li>
+        <li class="nav-list-item"><a class="navlist-link" href="#">contact</a></li>
       </ul>
     </nav>
 
@@ -57,25 +57,179 @@
 <!-- end of main navigation bar -->
 
 <!-- top carousal -->
-  <section class="corosoul-head">
-    <div>
-      <div class="carousal-item">
-        <img class="carousal-image" src="./images/banner11.jpg">
-      </div>
-      <div class="carousal-item">
-        <img class="carousal-image" src="./images/banner22.jpg">
-      </div>
+  <section class="carousal">    
+    <div class="carousal-banner">
+      <h1 class="carousal-title">BLAZE FASHION SUITE</h1>
+      <p class="carousal-text">
+        blaze fashion is your one stop store for all type of latest trendy fashion
+      </p>
+      <a class="explore-button" href="#">EXPLORE</a>
     </div> 
-    <div class="buttons">
-      <button class="corousal-button button-1"> </button>
-      <button class="corousal-button button-2"> </button>
-    </div>
+    <div class="carousal-item fade"></div>
   </section>
  
 <!-- end of top carousal -->
-  <script type="module">
-    import Swup from 'swup';
-    const swup = new Swup();
-  </script>
+
+<!-- models -->
+  
+  <section class="models">
+    
+    <div class="models-title">OUR MODELS</div>
+    <div class="models-container">
+      
+      <div class="models-element" 
+            style="background-color: rgb(20, 20, 20);
+            color: white;">
+
+        <img class="models-thumbnail" src="./images/s111.jpg">
+        <h2 class="models-name">dsfashdg</h2>
+        <p class="models-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat.</p>
+      </div>
+
+      <div class="models-element" 
+            style="background-color: rgba(255, 80, 100, 1.0);
+            color: white">
+
+        <h2 class="models-name">dsfashdg</h2>
+        <p class="models-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat.</p>
+        <img class="models-thumbnail" src="./images/s222.jpg">
+      </div>
+
+    </div>
+
+  </section>
+
+<!-- models - end -->
+
+<!-- services -->
+
+  <section class="work">
+
+    <div class="work-title">OUR SERVICES</div>
+    
+    <div class="work-banner">
+      <img src="./images/w11.jpg">
+
+      <div class="work-item-container">
+
+        <div class="work-item">
+          <a class="work-logo" href="#">
+            <img src="./fonts/r111.png">
+          </a>
+          <h1 class="work1">work 1</h1>
+          <p class="work-info">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit
+          </p>
+        </div>
+        <div class="work-item">
+          <a class="work-logo" href="#">
+            <img src="./fonts/r222.png">
+          </a>
+          <h1 class="work1">work 2</h1>
+          <p class="work-info">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit
+          </p>
+        </div>
+        <div class="work-item">
+          <a class="work-logo" href="#">
+            <img src="./fonts/r333.png">
+          </a>
+          <h1 class="work1">work 3</h1>
+          <p class="work-info">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit
+          </p>
+        </div>
+        <div class="work-item">
+          <a class="work-logo" href="#">
+            <img src="./fonts/r444.png">
+          </a>
+          <h1 class="work1">work 4</h1>
+          <p class="work-info">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    
+  </section>
+
+<!-- gallery -->
+
+  <section class="gallery">
+
+    <div class="gallery-heading">GALLERY</div>
+
+    <div class="gallery-scroller snaps-inline">
+      
+      <div class="gallery-element">
+        <img src="./images/ga1.jpg">
+        <h1 class="title-gallery">model 1</h1>
+        <p class="details-gallery">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.</p>
+        <a class="gallery-link" href="#">hire</a>
+      </div>
+      <div class="gallery-element">
+        <img src="./images/ga2.jpg">
+        <h1 class="title-gallery">model 2</h1>
+        <p class="details-gallery">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.</p>
+        <a class="gallery-link" href="#">hire</a>
+      </div>
+      <div class="gallery-element">
+        <img src="./images/ga3.jpg">
+        <h1 class="title-gallery">model 3</h1>
+        <p class="details-gallery">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.</p>
+        <a class="gallery-link" href="#">hire</a>
+      </div>
+      <div class="gallery-element">
+        <img src="./images/ga4.jpg">
+        <h1 class="title-gallery">model 4</h1>
+        <p class="details-gallery">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.</p>
+        <a class="gallery-link" href="#">hire</a>
+      </div>
+      <div class="gallery-element">
+        <img src="./images/ga5.jpg">
+        <h1 class="title-gallery">model 5</h1>
+        <p class="details-gallery">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.</p>
+        <a class="gallery-link" href="#">hire</a>
+      </div>
+      <!-- <div class="gallery-element">
+        <img src="./images/ga6.jpg">
+        <h1 class="title-gallery">model 6</h1>
+        <p class="details-gallery">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.</p>
+        <a class="gallery-link" href="#">hire</a>
+      </div> -->
+      <div class="gallery-element">
+        <img src="./images/ga7.jpg">
+        <h1 class="title-gallery">model 7</h1>
+        <p class="details-gallery">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.</p>
+        <a class="gallery-link" href="#">hire</a>
+      </div>
+      <div class="gallery-element">
+        <img src="./images/ga8.jpg">
+        <h1 class="title-gallery">model 8</h1>
+        <p class="details-gallery">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.</p>
+        <a class="gallery-link" href="#">hire</a>
+      </div>
+
+    </div>
+
+  </section>
+
+<!-- gallery - end  -->
 </body>
 </html>

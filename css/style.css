@@ -365,7 +365,8 @@ a {
 	bottom: 1.5rem;
 	right: 1.5rem;
 	z-index: 0;
-	background-color: rgba(220, 80, 80, 1.0);
+	background-color: rgba(40, 40, 40, 0.4);
+	backdrop-filter: blur(6px);
 }
 
 .col:nth-child(2) {
@@ -406,7 +407,7 @@ a {
 }
 
 .slide {
-	background: rgba(25, 1, 21, 0.8);
+	background: rgba(40, 40, 40, 0.6);
 	padding: 0 1.5rem;
 }
 

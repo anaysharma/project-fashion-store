@@ -39,7 +39,7 @@ body {
 	height: 3rem;
 	inset: 0 0 auto 0;
 	background-color: rgba(255, 255, 255, 0.4);
-	backdrop-filter: blur(10px) hue-rotate(-30deg);
+	backdrop-filter: blur(10px) hue-rotate(-10deg) saturate(180%) brightness(110%);
 	padding: 5px 10px;
 }
 
@@ -365,8 +365,8 @@ a {
 	bottom: 1.5rem;
 	right: 1.5rem;
 	z-index: 0;
-	background-color: rgba(40, 40, 40, 0.4);
-	backdrop-filter: blur(6px);
+	background-color: rgba(60, 60, 60, 0.4);
+	backdrop-filter: blur(4px);
 }
 
 .col:nth-child(2) {
@@ -407,7 +407,8 @@ a {
 }
 
 .slide {
-	background: rgba(40, 40, 40, 0.6);
+	background-color: rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(5px) saturate(120%);
 	padding: 0 1.5rem;
 }
 

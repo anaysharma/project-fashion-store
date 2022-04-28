@@ -14,13 +14,14 @@ body {
 		rgba(100, 255, 200, 1.0)
 	);*/
 }
+
 .main-header,
 .navlist,
 .socials-header,
 .title-header-list {
 	display: inline-flex;
 	column-gap: 20px;
-	align-items: center;	
+	align-items: center;
 }
 
 .main-header {
@@ -30,36 +31,45 @@ body {
 	inset: 1rem 1rem auto 1rem;
 	height: 5rem;
 	justify-content: space-between;
-	transition: 300ms ease-in-out;
+	transition: 500ms ease-in-out;
 }
+
 .navbar-scrolled {
+	z-index: 1000;
 	height: 3rem;
 	inset: 0 0 auto 0;
 	background-color: rgba(255, 255, 255, 0.4);
 	backdrop-filter: blur(10px) hue-rotate(-30deg);
 	padding: 5px 10px;
 }
+
 .navlist-link {
 	color: black;
 	text-transform: uppercase;
 }
+
 .navlist-item:hover {
 	color: red;
 	transform: translateY(10px);
 }
+
 .title-logo {
 	width: 35px;
 	aspect-ratio: 1;
 }
+
 .logo-header {
 	width: 30px;
 	aspect-ratio: 1;
 }
+
 .title-header-list {
 	padding: 0;
 }
 
-li { list-style: none; }
+li {
+	list-style: none;
+}
 
 a {
 	text-decoration: none;
@@ -74,7 +84,7 @@ a {
 	height: calc(100vh - 7rem);
 }
 
-.carousal-item{
+.carousal-item {
 	overflow: hidden;
 	z-index: -1;
 	height: calc(100vh - 7rem);
@@ -88,12 +98,13 @@ a {
 	animation: 1.5s fade;
 }
 
-@keyframes fade{
-	from { 
+@keyframes fade {
+	from {
 		transform: translateX(-100px);
 		opacity: 0.5;
 	}
-	to  { 
+
+	to {
 		transform: translateX(0);
 		opacity: 1;
 	}
@@ -104,7 +115,7 @@ a {
 	background-color: skyblue;
 	flex-grow: 1;
 	display: grid;
-	align-items:  center;
+	align-items: center;
 }
 
 .explore-button {
@@ -129,19 +140,12 @@ a {
 	margin-block-end: 1rem;
 	padding-inline-start: 1rem;
 }
-.brands-scroller {
-	margin: 0.2rem 0.2rem 0 0;
-	column-gap: 0.3rem;
-	display: flex;
-	flex-wrap: wrap;
-	width: calc(60vw - 2rem);
-	height: calc(100vh - 11rem);
-}
+
 .brand-container {
 	overflow: hidden;
 	height: calc(100vh - 10rem);
 	display: grid;
-	grid-template-columns: 40vw 1fr;
+	grid-template-columns: 1fr 60vw;
 	background-color: rgba(20, 70, 50, 1.0);
 }
 
@@ -149,15 +153,15 @@ a {
 	color: white;
 	display: grid;
 	align-items: center;
-	padding: 6rem;
-}
-
-.brands-element > img {
-	width: calc(20vw - 1rem);
-	aspect-ratio: 1;
+	padding-inline: 4rem;
+	padding-block: 20vh;
 }
 
 .brands-element {
+	height: calc(100vh - 10rem);
+	z-index: 10;
+	background-size: cover;
+	background-repeat: no-repeat;
 	margin: 0;
 	padding: 0;
 }
@@ -167,7 +171,7 @@ a {
 	/*scroll-padding-inline: 1rem;*/
 }
 
-.snaps-inline > * {
+.snaps-inline>* {
 	scroll-snap-align: start;
 }
 
@@ -183,6 +187,7 @@ a {
 .models {
 	margin: 1rem;
 }
+
 .models-container {
 	margin-block-start: 1rem;
 	display: grid;
@@ -235,7 +240,7 @@ a {
 	inline: 100%;
 }*/
 
-.work-logo > img {
+.work-logo>img {
 	width: 4rem;
 	margin-block-end: 2rem;
 	aspect-ratio: 1;
@@ -279,154 +284,304 @@ a {
 }
 
 
+/* gallery container */
 
+/* The magic */
 
+.gallery-heading {
+	margin-inline: 1rem;
+	background-color: white;
+	height: 3rem;
+	display: flex;
+	align-items: center;
+	padding-inline-start: 1rem;
+}
+
+.col {
+	overflow: hidden;
+	position: relative;
+}
+
+.slide {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	/* 
+    Visibility delay gives the previously hovered element time to slide out before disappearing.
+    Remove the `visibility` transition to slide in current element without sliding out previous element
+  */
+	transition: all 0.275s ease-in-out, visibility 0s 0.275s;
+	visibility: hidden;
+	will-change: transform;
+	transform: translateY(100%);
+}
+
+.row:hover~.row .slide {
+	transform: translateY(-100%);
+}
+
+.row:hover .slide {
+	transform: translateX(100%);
+}
+
+.row:hover .col:hover~.col .slide {
+	transform: translateX(-100%);
+}
+
+.row:hover .col:hover .slide {
+	transform: none;
+	visibility: visible;
+	transition-delay: 0s;
+}
+
+/* Pen styling */
+
+.container {
+	background-color: white;
+	margin: 1rem;
+	padding: 0;
+	max-width: calc(100vw - 2rem);
+}
+
+.row {
+	display: flex;
+}
+
+.col {
+	color: #fff;
+	flex: 1 1 auto;
+	min-height: calc(50vh - 5rem);
+	position: relative;
+}
+
+.col h2 {
+	font-weight: 300;
+	font-size: 1rem;
+	margin: 0;
+	padding: 8px;
+	position: absolute;
+	bottom: 1.5rem;
+	right: 1.5rem;
+	z-index: 0;
+	background-color: rgba(220, 80, 80, 1.0);
+}
+
+.col:nth-child(2) {
+	min-width: 20%;
+}
+
+.col:nth-child(4) {
+	min-width: 33%;
+}
+
+.col:nth-child(3)+.col:nth-child(3) {
+	min-width: 50%;
+}
+
+.photo-container {
+	background: #0f0523 50% 50%/cover;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	transition: 1s;
+	transform-origin: bottom right;
+}
+
+.photo-container::before {
+	/*background: linear-gradient(transparent, rgba(67, 17, 51, 0.5), #000320);*/
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.col:hover .photo-container {
+	transform: scale(1.25);
+}
+
+.slide {
+	background: rgba(25, 1, 21, 0.8);
+	padding: 0 1.5rem;
+}
+
+/* end of the magic container */
 
 
 /*-- footer --*/
-.footer{
+.footer {
 	transform: translateY(1rem);
-	background:#080808;
+	background: #080808;
 }
 
 .footer-grid {
 	width: 30rem;
 }
-.footer-grid h3{
-    color: #FFFFFF;
-    margin: 0 0 1em 0;
-    font-size: 1.2em;
-    text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: 4px;
+
+.footer-grid h3 {
+	color: #FFFFFF;
+	margin: 0 0 1em 0;
+	font-size: 1.2em;
+	text-transform: uppercase;
+	font-weight: 600;
+	letter-spacing: 4px;
 	text-align: center;
 	font-family: 'Arimo', sans-serif;
 }
-.footer-grid p{
-    color: #8a8a8a;
-    font-size: .9em;
-    line-height: 1.8em;
-    margin: 0;
+
+.footer-grid p {
+	color: #8a8a8a;
+	font-size: .9em;
+	line-height: 1.8em;
+	margin: 0;
 }
-.footer-grid ul{
-	padding:0;
-	margin:0;
+
+.footer-grid ul {
+	padding: 0;
+	margin: 0;
 }
-.footer-grid ul li{
-    display: block;
-    margin-bottom: .5em;
-    color: #8a8a8a;
-    font-size: .9em;
+
+.footer-grid ul li {
+	display: block;
+	margin-bottom: .5em;
+	color: #8a8a8a;
+	font-size: .9em;
 	text-align: center;
 }
-.footer-grid ul li a{
-    color: #FFFFFF;
-    text-decoration: none;
-    margin-left: .5em;
+
+.footer-grid ul li a {
+	color: #FFFFFF;
+	text-decoration: none;
+	margin-left: .5em;
 }
-.footer-grid ul li a:focus{
-	outline:none;
+
+.footer-grid ul li a:focus {
+	outline: none;
 }
-.footer-grid ul li a:hover{
-	color:#8a8a8a;
+
+.footer-grid ul li a:hover {
+	color: #8a8a8a;
 }
-.footer-grid ul li:last-child{
-	margin-bottom:0;
+
+.footer-grid ul li:last-child {
+	margin-bottom: 0;
 }
-.footer-grid ul li.text a{
-    color: #8a8a8a !important;
-    margin-bottom: .5em !important;
-    font-size: .9em !important;
+
+.footer-grid ul li.text a {
+	color: #8a8a8a !important;
+	margin-bottom: .5em !important;
+	font-size: .9em !important;
 }
-.footer-grid ul li.text a:hover{
-	color:#FFFFFF !important;
+
+.footer-grid ul li.text a:hover {
+	color: #FFFFFF !important;
 }
 
 .footer-grid form {
 	display: grid;
 	place-items: center;
 }
+
 .footer-grid form input[type="email"] {
 	background: #FFFFFF;
-    box-shadow: none !important;
-    padding: 10px 10px;
-    color: #000000;
-    font-size: .9em;
-    width: 100% !important;
-    border: 1px solid #ffffff;
-    margin: 0 0 1em 0;
+	box-shadow: none !important;
+	padding: 10px 10px;
+	color: #000000;
+	font-size: .9em;
+	width: 100% !important;
+	border: 1px solid #ffffff;
+	margin: 0 0 1em 0;
 }
+
 .footer-grid form input[type="submit"] {
 	color: #ffffff;
-    font-size: .875em;
+	font-size: .875em;
 	width: 38%;
-    border: solid 2px #FFFFFF;
-    padding: .5em 2em;
-    text-decoration: none;
-    background: none;
+	border: solid 2px #FFFFFF;
+	padding: .5em 2em;
+	text-decoration: none;
+	background: none;
 	transition: 0.5s all;
-    -webkit-transition: 0.5s all;
-    -moz-transition: 0.5s all;
-    -o-transition: 0.5s all;
-    -ms-transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-o-transition: 0.5s all;
+	-ms-transition: 0.5s all;
 }
+
 .footer-grid form input[type="submit"]:hover {
-    background: #F44336;
-    color: #FFFFFF;
-    border: solid 2px #F44336;
+	background: #F44336;
+	color: #FFFFFF;
+	border: solid 2px #F44336;
 }
+
 .footer-social-grids {
-    margin: 1em 0 0 0;
+	margin: 1em 0 0 0;
 }
+
 .footer-social-grids ul {
-    padding: 0;
-    margin: 0;
+	padding: 0;
+	margin: 0;
 	text-align: center;
 }
+
 .footer-social-grids ul li {
-    display: inline-block !important;
-    margin: 0 .5em 0 0 !important;
+	display: inline-block !important;
+	margin: 0 .5em 0 0 !important;
 }
+
 .footer-social-grids ul li a {
-    text-align: center;
+	text-align: center;
 }
-.footer-social-grids ul li a i.fa.fa-facebook, .footer-social-grids ul li a i.fa.fa-twitter, .footer-social-grids ul li a i.fa.fa-rss{
-    display: grid;
-    place-items: center;
-    height: 35px;
-    width: 35px;
-    border: solid 2px #b5b5b5;
-    line-height: 29px;
-    background: none;
-    color: #b5b5b5;
-    transition: 0.5s all;
-    -webkit-transition: 0.5s all;
-    -moz-transition: 0.5s all;
-    -o-transition: 0.5s all;
-    -ms-transition: 0.5s all;
+
+.footer-social-grids ul li a i.fa.fa-facebook,
+.footer-social-grids ul li a i.fa.fa-twitter,
+.footer-social-grids ul li a i.fa.fa-rss {
+	display: grid;
+	place-items: center;
+	height: 35px;
+	width: 35px;
+	border: solid 2px #b5b5b5;
+	line-height: 29px;
+	background: none;
+	color: #b5b5b5;
+	transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-o-transition: 0.5s all;
+	-ms-transition: 0.5s all;
 }
+
 .footer-social-grids ul li a i.fa.fa-facebook:hover {
 	border: solid 2px #3b5998;
-	background:#3b5998;
-    color: #FFFFFF;
+	background: #3b5998;
+	color: #FFFFFF;
 }
-.footer-social-grids ul li a i.fa.fa-twitter:hover{
+
+.footer-social-grids ul li a i.fa.fa-twitter:hover {
 	border: solid 2px #55acee;
-	background:#55acee;
+	background: #55acee;
 	color: #FFFFFF;
 }
-.footer-social-grids ul li a i.fa.fa-rss:hover{
+
+.footer-social-grids ul li a i.fa.fa-rss:hover {
 	border: solid 2px #f26522;
-	background:#f26522;
+	background: #f26522;
 	color: #FFFFFF;
 }
+
 .footer-bottom p {
-    text-align: center;
-    color: #fff;
+	text-align: center;
+	color: #fff;
 	margin-top: 2em;
 }
+
 .footer-bottom a:hover {
-    color: #f53753;
+	color: #f53753;
 }
 
 .agile-footer-grids {
@@ -435,4 +590,5 @@ a {
 	display: flex;
 	justify-content: space-between;
 }
+
 /*-- //footer --*/

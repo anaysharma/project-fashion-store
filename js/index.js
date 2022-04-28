@@ -9,7 +9,7 @@ function myFunction(){
 	var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
 	var scrollPosition = window.innerHeight;
 
-	if(scrollTop > 100) {
+	if(scrollTop > 200) {
 		navbar[0].classList.add("navbar-scrolled");
 	} else {
 		navbar[0].classList.remove("navbar-scrolled");
